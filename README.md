@@ -29,6 +29,9 @@ Prerequisites
 Python 3.x
 IBM Watson API Credentials
 
+Clone and install flask . run app.py and open in local browser
+
+
 ![image](https://github.com/user-attachments/assets/134edc0f-addc-4029-9349-7ccbd0d502e2)
 
 ![image](https://github.com/user-attachments/assets/773951b6-695d-4b7c-abb2-61795ca6dfca)
