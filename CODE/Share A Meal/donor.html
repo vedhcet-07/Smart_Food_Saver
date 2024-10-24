@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareMeal - Food Donation Platform</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .donor-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Space between the donor sections */
+        }
+
+        .donor-item {
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 400px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    
+            ul, ol {
+            list-style-type: none; /* Removes bullets from ul and numbers from ol */
+            padding-left: 0; /* Optional: Removes the default indentation */
+        }
+
+        nav.navbar {
+            width: 100%;
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            background: linear-gradient(90deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function receiveDonation() {
+            // Display an alert message
+            alert("Thank you, food will be delivered within an hour or two");
+
+            // Redirect to index.html after clicking OK
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="#" class="logo">ShareMeal</a>
+            <div class="nav-links">
+                <a href="index.html" >Home</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="donor-list">
+        <div class="donor-item">
+            <h1>Donor 1</h1>
+            <ol>
+                <li>Rice -> 4kg</li>
+                <li>Rasam -> 1kg</li>
+                <li>Sweet -> 0.5kg</li>
+            </ol>
+            <button onclick="receiveDonation()">Receive</button>
+        </div>
+
+        <div class="donor-item">
+            <h1>Donor 2</h1>
+            <ol>
+                <li>Rice -> 4kg</li>
+                <li>Rasam -> 1kg</li>
+                <li>Sweet -> 0.5kg</li>
+            </ol>
+            <button onclick="receiveDonation()">Receive</button>
+        </div>
+
+        <div class="donor-item">
+            <h1>Donor 3</h1>
+            <ol>
+                <li>Rice -> 4kg</li>
+                <li>Rasam -> 1kg</li>
+                <li>Sweet -> 0.5kg</li>
+            </ol>
+            <button onclick="receiveDonation()">Receive</button>
+        </div>
+    </div>
+
+    <br>
+    <div class="donor-list">
+        <div class="donor-item">
+            <h1>Donor 14</h1>
+            <ol>
+                <li>Rice -> 4kg</li>
+                <li>Rasam -> 1kg</li>
+                <li>Sweet -> 0.5kg</li>
+            </ol>
+            <button onclick="receiveDonation()">Receive</button>
+        </div>
+
+        <div class="donor-item">
+            <h1>Donor 5</h1>
+            <ol>
+                <li>Rice -> 4kg</li>
+                <li>Rasam -> 1kg</li>
+                <li>Sweet -> 0.5kg</li>
+            </ol>
+            <button onclick="receiveDonation()">Receive</button>
+        </div>
+
+        <div class="donor-item">
+            <h1>Donor 6</h1>
+            <ol>
+                <li>Rice -> 4kg</li>
+                <li>Rasam -> 1kg</li>
+                <li>Sweet -> 0.5kg</li>
+            </ol>
+            <button onclick="receiveDonation()">Receive</button>
+        </div>
+    </div>
+
+</body>
+</html>

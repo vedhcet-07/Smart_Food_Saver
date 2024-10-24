@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareMeal - Food Donation Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="logo.jpeg" alt="logo" width="60" height="60" margin-right="4px" border-radius="50%">
+            <a href="#" class="logo">ShareMeal</a>
+            <div class="nav-links">
+                <a href="#" onclick="showHome()">Home</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <div id="home-section" class="hero">
+            <h1>Welcome to ShareMeal</h1>
+            <p>Connect food donors with those in need. Make a difference in someone's life today.</p>
+            <div class="image-placeholder">
+                <img src="https://media.istockphoto.com/id/1191080960/photo/traditional-turkish-breakfast-and-people-taking-various-food-wide-composition.jpg?s=612x612&w=0&k=20&c=PP5ejMisEwzcLWrNmJ8iPPm_u-4P6rOWHEDpBPL2n7Q=" alt="Food Donation Image" />
+            </div>
+            <div class="button-container">
+                <button class="btn btn-donor" onclick="showDonorForm()">I Want to Donate</button>
+                <button class="btn btn-receiver" onclick="showReceiverForm()">I Need Food</button>
+            </div>
+        </div>
+
+        <!-- Donor Details Form -->
+        <div id="donor-form" class="form-container">
+            <h2>Donor Information</h2>
+            <form id="donor-details-form" onsubmit="submitDonorDetails(event)">
+                <div class="form-group">
+                    <label for="donor-name">Full Name *</label>
+                    <input type="text" id="donor-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="donor-address">Address *</label>
+                    <input type="text" id="donor-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="donor-phone">Contact Number *</label>
+                    <input type="tel" id="donor-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="donor-email">Email *</label>
+                    <input type="email" id="donor-email" required>
+                </div>
+                <button type="submit" class="btn btn-donor">Next</button>
+            </form>
+        </div>
+
+        <!-- Donor Food Checklist -->
+        <div id="donor-checklist" class="form-container">
+            <h2>Select Available Food Items</h2>
+            <p class="subtitle">Please select the items you wish to donate</p>
+            <form id="donor-food-form" onsubmit="submitDonorFoodList(event)">
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="rice" name="food-items">
+                        <label for="rice">Rice</label>
+                        <input type="number" id="rice" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sabji" name="food-items">
+                        <label for="sabji">Sabji</label>
+                        
+                        <input type="number" id="sabji" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chapathi" name="food-items">
+                        <label for="chapathi">Chapathi</label>
+                        
+                        <input type="number" id="chapati" name="weight" min="0.5" step="0.5" placeholder="Enter servings ">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sweet" name="food-items">
+                        <label for="sweet">Sweet</label>
+                        
+                        <input type="number" id="sweet" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sambar" name="food-items">
+                        <label for="sambar">Sambar</label>
+                        
+                        <input type="number" id="sambar" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chutney" name="food-items">
+                        <label for="chutney">chutney</label>
+                        
+                        <input type="number" id="chutney" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Dosa" name="food-items">
+                        <label for="Dosa">Dosa</label>
+                        
+                        <input type="number" id="dosa" name="weight" min="0.5" step="0.5" placeholder="Enter servings">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Pulav" name="food-items">
+                        <label for="Pulav">Pulav</label>
+                        
+                        <input type="number" id="pulav" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Biryani" name="food-items">
+                        <label for="Biryani">Biryani</label>
+                        
+                        <input type="number" id="biryani" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Paneer" name="food-items">
+                        <label for="Paneer">Paneer</label>
+                        
+                        <input type="number" id="paneer" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                </div>
+                
+        
+                <button type="submit" class="btn btn-donor">Submit Donation</button>
+            </form>
+        </div>
+
+        <!-- Receiver Details Form -->
+        <div id="receiver-form" class="form-container">
+            <h2>Receiver Information</h2>
+            <form id="receiver-details-form" onsubmit="submitReceiverDetails(event)">
+                <div class="form-group">
+                    <label for="receiver-name">Organization/Individual Name *</label>
+                    <input type="text" id="receiver-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="receiver-address">Address *</label>
+                    <input type="text" id="receiver-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="receiver-phone">Contact Number *</label>
+                    <input type="tel" id="receiver-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="receiver-email">Email *</label>
+                    <input type="email" id="receiver-email" required>
+                </div>
+                <button type="submit" class="btn btn-receiver">Next</button>
+            </form>
+        </div>
+
+        <!-- Receiver Food Checklist -->
+        <div id="receiver-checklist" class="form-container">
+            <h2>Select Required Food Items</h2>
+            <p class="subtitle">Please select the items you need</p>
+            <form id="receiver-food-form" onsubmit="submitReceiverFoodList(event)">
+                <div class="checkbox-group">
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="rice" name="food-items">
+                        <label for="rice">Rice</label>
+                        <input type="number" id="rice" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sabji" name="food-items">
+                        <label for="sabji">Sabji</label>
+                        
+                        <input type="number" id="sabji" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chapathi" name="food-items">
+                        <label for="chapathi">Chapathi</label>
+                        
+                        <input type="number" id="chapati" name="weight" min="0.5" step="0.5" placeholder="Enter servings">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sweet" name="food-items">
+                        <label for="sweet">Sweet</label>
+                        
+                        <input type="number" id="sweet" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="sambar" name="food-items">
+                        <label for="sambar">Sambar</label>
+                        
+                        <input type="number" id="sambar" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="chutney" name="food-items">
+                        <label for="chutney">chutney</label>
+                        
+                        <input type="number" id="chutney" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Dosa" name="food-items">
+                        <label for="Dosa">Dosa</label>
+                        
+                        <input type="number" id="dosa" name="weight" min="0.5" step="0.5" placeholder="Enter servings">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Pulav" name="food-items">
+                        <label for="Pulav">Pulav</label>
+                        
+                        <input type="number" id="pulav" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Biryani" name="food-items">
+                        <label for="Biryani">Biryani</label>
+                        
+                        <input type="number" id="biryani" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                  <div class="checkbox-item">
+                        <input type="checkbox" id="Paneer" name="food-items">
+                        <label for="Paneer">Paneer</label>
+                        
+                        <input type="number" id="paneer" name="weight" min="0.5" step="0.5" placeholder="Enter weight in kgs">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-receiver" onclick="window.location.href='donor.html'">Submit Request</button>
+            </form>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact-section" class="form-container">
+            <h2>Contact Us</h2>
+            <p style="margin-bottom: 1rem;">Have questions? We're here to help!</p>
+            <div class="form-group">
+                <label>Email:</label>
+                <p>support@sharemeal.org</p>
+            </div>
+            <div class="form-group">
+                <label>Phone:</label>
+                <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="form-group">
+                <label>Address:</label>
+                <p>123 Food Street, Charity Lane<br>Helpington, HP 12345</p>
+            </div>
+        </div>
+
+        <div id="success-message" class="success-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body Styling */
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;         /* Ensure minimum height occupies full viewport */
+    color: #333;
+  }
+  
+  /* Container Styling */
+  .container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* Center content vertically */
+    height: 100%;              /* Occupy full height */
+    min-height: 80vh;          /* Ensure container covers at least 80% of the viewport height */
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Text Styles */
+  h1 {
+    text-align: center;
+    color: #ff9a9e;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    color: #ff9a9e;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #bbdefb;
+    border-radius: 8px;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #ff9a9e;
+  }
+  
+  /* Textarea Styling */
+  textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  /* Button Styling */
+  button {
+    padding: 15px;
+    background-color: #ff9a9e;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #a18cd1;
+  }
+  
+  /* Success Message Styling */
+  #successMessage {
+    margin-top: 20px;
+    color: #388e3c;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  
