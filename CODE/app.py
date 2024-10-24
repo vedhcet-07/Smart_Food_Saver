@@ -3,7 +3,6 @@ import requests
 
 app = Flask(__name__, static_folder='static')
 
-# Replace with your IBM Cloud API key
 API_KEY = 'API-KEY'
 SCORING_URL = 'API-URL'
 
@@ -36,7 +35,6 @@ def get_token():
 @app.route('/predict', methods=['POST'])
 def predict():
     """Handle predictions from the front end."""
-    # Get the input data from the POST request
     data = request.json
     food_type = data['foodType']
     guest_number = data['guestNumber']
@@ -45,7 +43,6 @@ def predict():
     seasonality = data['seasonality']
     pricing = data['pricing']
 
-    # Prepare the payload for the IBM Watson API
     payload = {
         "input_data": [{
             "fields": ["Type of Food", "Number of Guests", "Event Type", "Storage Conditions", "Seasonality", "Pricing"],
@@ -53,10 +50,8 @@ def predict():
         }]
     }
 
-    # Get IBM Cloud auth token
     token = get_ibm_token()
 
-    # Make the request to the IBM Watson API
     headers = {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
@@ -64,8 +59,8 @@ def predict():
     response = requests.post(SCORING_URL, json=payload, headers=headers)
     result = response.json()
 
-    # Return the prediction result
-    prediction_value = round(result['predictions'][0]['values'][0][0])  # Adjust based on your model response structure
+  
+    prediction_value = round(result['predictions'][0]['values'][0][0])
     return jsonify({"prediction": prediction_value})
 
 
