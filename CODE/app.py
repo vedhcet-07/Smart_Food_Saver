@@ -4,8 +4,8 @@ import requests
 app = Flask(__name__, static_folder='static')
 
 # Replace with your IBM Cloud API key
-API_KEY = '83TKxJRFe2h5plYpQjhdfcLVaXt3dLv3Ij-WH2fim_IQ'
-SCORING_URL = 'https://eu-de.ml.cloud.ibm.com/ml/v4/deployments/codeforfood/predictions?version=2021-05-01'
+API_KEY = 'API-KEY'
+SCORING_URL = 'API-URL'
 
 
 def get_ibm_token():
