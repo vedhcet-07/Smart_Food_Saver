@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Quantity Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Food Quantity Predictor</h1>
+        <form id="foodPredictionForm">
+            <label for="foodType">Type of Food:</label>
+     <select id="foodType" name="foodType">
+        <option value="default" selected disabled>Select Food Type</option>
+        <option value="meat">Meat</option>
+        <option value="bakery_goods">Bakery Goods</option>
+        <option value="fruits">Fruits</option>
+        <option value="vegetables">Vegetables</option>
+        <option value="dairy_products">Dairy Products</option>  </select>
+
+            <label for="guestNumber">Number of Guests:</label>
+            <input type="number" id="guestNumber" name="guestNumber" required>
+
+            <label for="eventType">Type of Event:</label>
+             <select id="eventType" name="eventType">
+                <option value="default" selected disabled>Select Event Type</option>
+                <option value="birthday">Birthday</option>
+                <option value="corporate">Corporate</option>
+                <option value="wedding">Wedding</option>
+                <option value="social_gathering">Social Gathering</option>
+            </select>
+    
+            <label for="storageConditions">Storage Conditions:</label>
+            <select id="storageConditions" name="storageConditions">
+                <option value="default" selected disabled>Select Storage Conditions</option>
+                <option value="refrigerated">Refrigerated</option>
+                <option value="room_temperature">Room Temperature</option>
+            </select>
+            <label for="seasonality">Seasonality:</label>
+            <select id="seasons" name="seasons">
+                <option value="default" selected disabled>Select Season</option>
+                <option value="summer">Summer</option>
+                <option value="winter">Winter</option>
+                <option value="all_seasons">All Seasons</option>
+            </select>
+            <label for="pricing">Pricing:</label>
+             <select id="pricing" name="pricing">
+                <option value="default" selected disabled>Select Pricing</option>
+                <option value="low">Low</option>
+                <option value="moderate">Moderate</option>
+                <option value="high">High</option>
+            </select>
+            <button type="submit">Predict</button>
+            <br>
+
+               </form>
+               <a target="_blank" href="https://gamy-friendly-kiss.glitch.me/"><button>Share A Meal</button>
+               </a> 
+
+        <div id="predictionResult" class="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
